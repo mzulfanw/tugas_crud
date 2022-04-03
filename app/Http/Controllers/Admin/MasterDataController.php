@@ -47,7 +47,28 @@ class MasterDataController extends Controller
         }
     }
 
+    public function update($id, Request $request) {
+        $data = [
+            'nama_barang' => $request->nama_barang,
+            'harga_jual' => $request->harga_jual,
+            'stokakhir' => $request->stokakhir,
+            'log' => $request->log
+        ];
+        $update = $this->MasterDataModel->updateById($id, $data);
+        if ($update) {
+            return redirect()->route('admin.master-data.index')->with('success', 'Data berhasil diubah');
+        }else {
+            return redirect()->back()->with('error', 'Data gagal diubah');
+        }
+    }
 
+
+    public function view($id) {
+        $data = [
+            'master_data' => $this->MasterDataModel->view($id)
+        ];
+        return view('Admin.Master.v_View', $data);
+    }
 
 
     public function destroy($id) {

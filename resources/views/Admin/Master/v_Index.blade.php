@@ -51,7 +51,8 @@
                                                         class="btn btn-warning btn-sm">Edit</a>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="" class="btn btn-secondary btn-sm">View</a>
+                                                    <a href="{{ route('admin.master-data.view', $value->kd_barang) }}"
+                                                        class="btn btn-secondary btn-sm">View</a>
                                                 </div>
                                                 <div class="col">
                                                     <form

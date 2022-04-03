@@ -4,7 +4,7 @@
         <div class="container">
             <div class="card">
                 <div class="card-header">
-                    Form Create Master Data
+                    Form Update Master Data
                 </div>
                 <div class="card-body">
                     {{-- @if (Session::get('error'))
@@ -12,8 +12,11 @@
                             {{ Session::get('error') }}
                         </div>
                     @endif --}}
-                    <form action="{{ route('admin.master-data.store') }}" method="POST">
+                    <form action="{{ route('admin.master-data.update', $master_data->kd_barang) }}" method="POST">
                         @csrf
+                        <div>
+                            <input type="hidden" name="kd_barang" value="{{ $master_data->kd_barang }}">
+                        </div>
                         <div class="mb-3">
                             <input type="text" name="nama_barang" class="form-control"
                                 value="{{ $master_data->nama_barang }}" placeholder="Nama Barang" required>

@@ -29,11 +29,16 @@ Route::group([
     Route::get('/users', [UserController::class,'index'])->name('users');
     Route::get('/users/create', [UserController::class,'create'])->name('users.create');
     Route::post('/users/store', [UserController::class,'store'])->name('users.store');
+    Route::post('/users/update/{id}', [UserController::class,'update'])->name('users.update');
     Route::delete('/users/{id}', [UserController::class,'destroy'])->name('users.destroy');
+    Route::get('/users/view/{id}', [UserController::class,'view'])->name('users.view');
+    Route::get('/users/edit/{id}', [UserController::class,'edit'])->name('users.edit');
 
     Route::get('/master-data', [MasterDataController::class,'index'])->name('master-data.index');
     Route::get('/master-data/create', [MasterDataController::class,'create'])->name('master-data.create');
     Route::post('/master-data/store', [MasterDataController::class,'store'])->name('master-data.store');
     Route::get('/master-data/edit/{id}', [MasterDataController::class,'edit'])->name('master-data.edit');
     Route::delete('/master-data/{id}', [MasterDataController::class,'destroy'])->name('master-data.destroy');
+    Route::get('/master-data/view/{id}', [MasterDataController::class, 'view'])->name('master-data.view');
+    Route::post('/master-data/update/{id}', [MasterDataController::class,'update'])->name('master-data.update');
 });

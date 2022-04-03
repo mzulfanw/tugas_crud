@@ -51,12 +51,14 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col">
-                                                    <a href="" class="btn btn-warning btn-sm">
+                                                    <a href="{{ route('admin.users.edit', $value->id) }}"
+                                                        class="btn btn-warning btn-sm">
                                                         Edit
                                                     </a>
                                                 </div>
                                                 <div class="col">
-                                                    <a href="" class="btn btn-secondary btn-sm">
+                                                    <a href="{{ route('admin.users.view', $value->id) }}"
+                                                        class="btn btn-secondary btn-sm">
                                                         View
                                                     </a>
                                                 </div>

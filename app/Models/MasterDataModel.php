@@ -33,4 +33,13 @@ class MasterDataModel extends Model
     public function edit($id) {
         return DB::table('master_data')->where('kd_barang', $id)->first();
     }
+
+    public function view($id) {
+        return DB::table('master_data')->where('kd_barang', $id)->first();
+    }
+
+    // edit data by id
+    public function updateById($id, $data) {
+        return DB::table('master_data')->where('kd_barang', $id)->update($data);
+    }
 }
